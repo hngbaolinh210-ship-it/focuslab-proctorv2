@@ -26,6 +26,8 @@ COPY --from=build /usr/local/lib/python3.12/site-packages /usr/local/lib/python3
 COPY --from=build /usr/local/bin /usr/local/bin
 COPY --from=build /app /app
 
+# FOCUSLAB_BACKUP_URL (duong ket noi PostgreSQL mien phi) dat trong Environment cua
+# Render, KHONG ghi vao file nay: no chua mat khau CSDL.
 ENV PYTHONUNBUFFERED=1 \
     FOCUSLAB_DB=/data/focuslab-thi.db \
     FOCUSLAB_COOKIE_SECURE=1
